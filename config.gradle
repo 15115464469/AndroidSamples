@@ -1,0 +1,156 @@
+ext {
+
+    android = [
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.2",
+
+            minSdkVersion    : 21,
+            targetSdkVersion : 29,
+
+            versionCode      : 1,
+            versionName      : "1.0.0"
+    ]
+
+    appcompat = "1.1.0"
+    material = "1.0.0"
+    supportV4 = "1.0.0"
+    recyclerview = "1.1.0"
+    constraintlayout = "1.1.3"
+    savedstateVersion = "1.0.0-rc03"
+    multidex = "2.0.1"
+    retrofitVersion = '2.7.1'
+    rxandroid2Version= "2.1.1"
+    rxjava2Version= "2.2.15"
+    butterknifeSdkVersion = "8.8.1"
+    daggerVersion = '2.25.4'
+    glideVersion = "4.10.0"
+    rxlifecycle2Version = "2.2.1"
+    canaryVersion = "1.6.1"
+    exoplayerVersion = "2.8.4"
+    roomVersion = '2.2.3'
+    lifecycleVersion = "2.1.0"
+    pagingVersion = '2.1.1'
+    navigationVersion = "2.1.0"
+    workVersion = "2.2.0"
+    okhttp = "3.14.4"
+    leakcanaryVersion = "1.6.3"
+
+    dependencies = [
+            "appcompat"                  : "androidx.appcompat:appcompat:${appcompat}",
+            "meterial"                   : "com.google.android.material:material:${material}",
+            "support-v4"                 : "androidx.legacy:legacy-support-v4:${supportV4}",
+            "recyclerview"               : "androidx.recyclerview:recyclerview:${recyclerview}",
+            "constraint-layout"          : "androidx.constraintlayout:constraintlayout:${constraintlayout}",
+            "multidex"                   : "androidx.multidex:multidex:2.0.1",
+
+            "lifecycle-runtime"          : "androidx.lifecycle:lifecycle-runtime:${lifecycleVersion}",
+            "lifecycle-extensions"       : "androidx.lifecycle:lifecycle-extensions:${lifecycleVersion}",
+            "lifecycle-common-java8"     : "androidx.lifecycle:lifecycle-common-java8:${lifecycleVersion}",
+            "lifecycle-reactivestreams"  : "androidx.lifecycle:lifecycle-reactivestreams:${lifecycleVersion}",
+            "lifecycle-compiler"         : "androidx.lifecycle:lifecycle-compiler:${lifecycleVersion}",
+            'lifecycle-savedstate'       : "androidx.lifecycle:lifecycle-viewmodel-savedstate:${savedstateVersion}",
+
+            "navigation-fragment"        : "androidx.navigation:navigation-fragment:${navigationVersion}",
+            "navigation-ui"              : "androidx.navigation:navigation-ui:${navigationVersion}",
+            "navigation-testing"         : "androidx.navigation:navigation-testing:${navigationVersion}",
+
+            "room-runtime"               : "androidx.room:room-runtime:${roomVersion}",
+            "room-guava"                 : "androidx.room:room-guava:${roomVersion}",
+            "room-rxjava2"               : "androidx.room:room-rxjava2:${roomVersion}",
+            "room-testing"               : "androidx.room:room-testing:${roomVersion}",
+            "room-compiler"              : "androidx.room:room-compiler:${roomVersion}",
+
+            "db"                         : "androidx.sqlite:sqlite:${roomVersion}",
+            "db-framework"               : "androidx.sqlite:sqlite-framework:${roomVersion}",
+
+            "safeRoom-archDB"            : "android.arch.persistence:db:${roomVersion}",
+            "safeRoom-sqlcipher"         : "net.zetetic:android-database-sqlcipher:3.5.9@aar",
+
+            "paging-common"              : "androidx.paging:paging-common:${pagingVersion}",
+            "paging-runtime"             : "androidx.paging:paging-runtime:${pagingVersion}",
+            "paging-rxjava2"             : "androidx.paging:paging-rxjava2:${pagingVersion}",
+
+            "work-runtime"               : "androidx.work:work-runtime:${workVersion}",
+            "work-firebase"              : "androidx.work:work-firebase:${workVersion}",
+            "work-testing"               : "androidx.work:work-testing:${workVersion}",
+
+            "cc-module"                  : "com.billy.android:cc:1.1.0",
+
+            //network
+            "retrofit2"                  : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            "retrofit2-converter-gson"   : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            "retrofit2-adapter-rxjava2"  : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+            "okhttp3"                    : "com.squareup.okhttp3:okhttp:${okhttp}",
+            "okhttp3-logging-interceptor": "com.squareup.okhttp3:logging-interceptor:${okhttp}",
+            "okhttp3-urlconnection"      : "com.squareup.okhttp3:okhttp-urlconnection:${okhttp}",
+            "glide"                      : "com.github.bumptech.glide:glide:${glideVersion}",
+            "glide-compiler"             : "com.github.bumptech.glide:compiler:${glideVersion}",
+            "glide-loader-okhttp3"       : "com.github.bumptech.glide:okhttp3-integration:${glideVersion}",
+            "glide-transformations"      : "jp.wasabeef:glide-transformations:3.3.0",
+
+            //view
+            "pickerview"                 : "com.contrarywind:Android-PickerView:3.2.5",
+            "photoview"                  : "com.github.chrisbanes.photoview:library:1.2.3",
+            "paginate"                   : "com.github.markomilos:paginate:0.5.1",
+            "vlayout"                    : "com.alibaba.android:vlayout:1.2.8@aar",
+            "lottie"                     : "com.airbnb.android:lottie:2.5.9",
+
+            //rx2
+            "rxandroid2"                 : "io.reactivex.rxjava2:rxandroid:2.1.1",
+            "rxjava2"                    : "io.reactivex.rxjava2:rxjava:2.2.15",
+            "rxlifecycle2"               : "com.trello.rxlifecycle2:rxlifecycle:${rxlifecycle2Version}",
+            "rxlifecycle2-android"       : "com.trello.rxlifecycle2:rxlifecycle-android:${rxlifecycle2Version}",
+            "rxlifecycle2-components"    : "com.trello.rxlifecycle2:rxlifecycle-components:${rxlifecycle2Version}",
+            "rxpermissions2"             : "com.github.tbruyelle:rxpermissions:0.10.2",
+            "rxerrorhandler2"            : "me.jessyan:rxerrorhandler:2.1.1",
+            "rxcache2"                   : "com.github.VictorAlbertos.RxCache:runtime:1.8.3-2.x",
+            "rxcache2gson"               : "com.github.VictorAlbertos.Jolyglot:gson:0.0.4",
+            "rxbinding2"                 : "com.jakewharton.rxbinding2:rxbinding:2.1.1",
+
+            //tools
+            "dagger2"                    : "com.google.dagger:dagger:${daggerVersion}",
+            "dagger2-android"            : "com.google.dagger:dagger-android:${daggerVersion}",
+            "dagger2-android-support"    : "com.google.dagger:dagger-android-support:${daggerVersion}",
+            "dagger2-compiler"           : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            "dagger2-android-processor"  : "com.google.dagger:dagger-android-processor:${daggerVersion}",
+
+            "gson"                       : "com.google.code.gson:gson:2.8.5",
+            "javax.annotation"           : "javax.annotation:jsr250-api:1.0",
+            "arouter"                    : "com.alibaba:arouter-api:1.3.1",
+            "arouter-compiler"           : "com.alibaba:arouter-compiler:1.1.4",
+            "progressmanager"            : "me.jessyan:progressmanager:1.5.0",
+            "retrofit-url-manager"       : "me.jessyan:retrofit-url-manager:1.4.0",
+            "disklrucache"               : "com.jakewharton:disklrucache:2.0.2",
+            "utilcode"                   : "com.blankj:utilcodex:1.24.7",
+            "statusbar-util"             : "com.jaeger.statusbarutil:library:1.5.1",
+            "shadowimageview"            : "com.yinglan.shadowimageview:shadowimageview:1.0.4",
+
+            "baseAdapterHelper"          : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50",
+            "xStateController"           : "com.github.limedroid:XStateController:v1.1.1",
+            "photoView"                  : "com.github.chrisbanes:PhotoView:2.1.3",
+            "wheelPicker"                : "com.github.gzu-liyujiang.AndroidPicker:WheelPicker:1.5.6",
+            "filePicker"                 : "com.github.gzu-liyujiang.AndroidPicker:FilePicker:1.5.6",
+
+            //test
+            "junit"                      : "junit:junit:4.12",
+            "androidJUnitRunner"         : "android.support.test.runner.AndroidJUnitRunner",
+            "runner"                     : "androidx.test:runner:1.2.0",
+            "espresso"                   : "androidx.test.espresso:espresso-core:3.2.0",
+            "mockito-core"               : "org.mockito:mockito-core:2.22.0",
+            "timber"                     : "com.jakewharton.timber:timber:4.7.0",
+            "logger"                     : "com.orhanobut:logger:2.2.0",
+            "canary-debug"               : "com.squareup.leakcanary:leakcanary-android:${canaryVersion}",
+            "canary-release"             : "com.squareup.leakcanary:leakcanary-android-no-op:${canaryVersion}",
+            "canary-support-fragment"    : "com.squareup.leakcanary:leakcanary-support-fragment:${canaryVersion}",
+
+            "exoplayer"                  : "com.google.android.exoplayer:exoplayer:${exoplayerVersion}",
+            "exoplayer-core"             : "com.google.android.exoplayer:exoplayer-core:${exoplayerVersion}",
+            "exoplayer-dash"             : "com.google.android.exoplayer:exoplayer-dash:${exoplayerVersion}",
+            "exoplayer-ui"               : "com.google.android.exoplayer:exoplayer-ui:${exoplayerVersion}",
+
+            "dialogplus"                 : "com.orhanobut:dialogplus:1.11@aar"
+
+    ]
+
+
+}

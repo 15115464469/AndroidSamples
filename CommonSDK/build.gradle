@@ -1,0 +1,116 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+
+        //指定room.schemaLocation生成的文件路径
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+
+    configurations.all {
+//        resolutionStrategy.force rootProject.ext.dependencies["lifecycle-extensions"]
+
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+//    api rootProject.ext.dependencies["appcompat"]
+    api "androidx.appcompat:appcompat:$rootProject.ext.appcompat"
+    api "androidx.legacy:legacy-support-v4:$rootProject.ext.supportV4"
+    api "androidx.recyclerview:recyclerview:$rootProject.ext.recyclerview"
+    api "com.google.android.material:material:$rootProject.ext.material"
+    api "androidx.constraintlayout:constraintlayout:$rootProject.ext.constraintlayout"
+    api "androidx.multidex:multidex:$rootProject.ext.multidex"
+
+    api "androidx.navigation:navigation-ui:$rootProject.ext.navigationVersion"
+    api "androidx.navigation:navigation-fragment:$rootProject.ext.navigationVersion"
+
+    api "androidx.paging:paging-common:$rootProject.ext.pagingVersion"
+    api "androidx.paging:paging-rxjava2:$rootProject.ext.pagingVersion"
+
+    api "androidx.work:work-runtime:$rootProject.ext.workVersion"
+
+    // dependency injection
+    api "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
+    api "com.google.dagger:dagger-android:$rootProject.ext.daggerVersion"
+    api "com.google.dagger:dagger-android-support:$rootProject.ext.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.ext.daggerVersion"
+
+    api 'androidx.lifecycle:lifecycle-viewmodel-savedstate:1.0.0-rc03'
+    api "androidx.lifecycle:lifecycle-extensions:$rootProject.ext.lifecycleVersion"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$rootProject.ext.lifecycleVersion"
+    api "androidx.lifecycle:lifecycle-viewmodel-savedstate:$rootProject.ext.savedstateVersion"
+
+    api "androidx.room:room-runtime:$rootProject.ext.roomVersion"
+    api "androidx.room:room-rxjava2:$rootProject.ext.roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$rootProject.ext.roomVersion"
+
+//    api rootProject.ext.dependencies["safeRoom-archDB"]
+//    api rootProject.ext.dependencies["safeRoom-sqlcipher"]
+
+    // CC组件化
+    api rootProject.ext.dependencies["cc-module"]
+    // 网络请求
+    api "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttp"
+    api "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava2Version"
+    api "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroid2Version"
+    api "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    api "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
+    api "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitVersion"
+    // 持久化Cookie
+    implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+    // Glide图片加载
+    api "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.ext.glideVersion"
+    // 权限处理
+    api "com.github.tbruyelle:rxpermissions:0.10.2"
+    // JSON解析
+    api 'com.google.code.gson:gson:2.8.6'
+    // 磁盘缓存
+    api "com.jakewharton:disklrucache:2.0.2"
+    // 工具类
+    api "com.blankj:utilcodex:1.26.0"
+    // 状态栏
+    api "com.jaeger.statusbarutil:library:1.5.1"
+    // VirtualLayout
+    api "com.alibaba.android:vlayout:1.2.8@aar"
+    // 适配器
+    api "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.50"
+    // 滑动选择控件
+    api rootProject.ext.dependencies["wheelPicker"]
+    // 日志
+    api 'com.jakewharton.timber:timber:4.7.1'
+    // 内存检查
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$rootProject.ext.leakcanaryVersion"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$rootProject.ext.leakcanaryVersion"
+    debugImplementation "com.squareup.leakcanary:leakcanary-support-fragment:$rootProject.ext.leakcanaryVersion"
+
+}

@@ -1,0 +1,26 @@
+//include ":app"
+//include ":appDagger"
+//include ":appMVVM"
+//include "app_OCR"
+//include ':appMediaPlayer'
+//include ':appDialog', ':appTV', ':appPlayer'
+//include ':appView', ':appGraphic', ':appCamera', ':appVideo', ':appRxJava'
+//include ':appDownloadManager'
+//include ':appLeakCanary'
+//include ':appCache'
+//include ':appDatabinding'
+//include ':appHttp'
+//include ':appCrash'
+//include ':appfragment'
+// ':appReceiver', ':appTask'
+//include ':appAdapter'
+//include ':Dagger2.1'
+//include 'appNavigation'
+//include ':appVoicePlaying'
+include ':CommonSDK', ':appService'
+//include ':appNetwork'
+//include ':appDB'
+//include ':appFileProvider'
+//include ':appComponents'
+//include ':libVoiceSynt、hesis'
+//include ':libOCR'
